@@ -42,19 +42,8 @@ map <up> :e
 inoremap <up> <Esc>:e 
 nnoremap <Leader>\b :b
 
-
-" Tab manipulation remapping
-nnoremap tn :tabnew<Space>
-
-nnoremap tk :tabnext<CR>
-nnoremap tj :tabprev<CR>
-
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
-
 " My remapping
 inoremap {<CR> {<CR>}<Esc>O<Tab>
-noremap <Leader>\t :botright vertical terminal<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
 " C program skeleton
