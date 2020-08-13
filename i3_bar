@@ -1,3 +1,4 @@
+#!/bin/bash
 
 ### Color codes ###
 txtblk='\e[0;30m' # Black - Regular
@@ -34,14 +35,9 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-PS1="\[$bldwht\][ \[$bldgrn\]\u \[$bldwht\]] : \[$bldwht\]\w\[$bldgrn\] $ \[$txtrst\]"
-PS2="\[$bldwht\]> \[\e[00m\]"
 
-
-alias ls="ls -p --color=always --group-directories-first"
-alias grep="grep --color=always -n"
-
-
-set -o vi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+while [ 1 ]
+do
+	echo -e "\t${undylw}$(date +'%A')${txtrst} |${bldcyn} $(date +'%B %d, %Y') ${txtrst}|${bldwht} $(date +'%r')${txtrst}"
+	sleep 1
+done
