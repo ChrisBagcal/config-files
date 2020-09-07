@@ -34,13 +34,16 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-PS1="\[$bldwht\][ \[$bldgrn\]\u \[$bldwht\]] : \[$bldwht\]\w\[$bldgrn\] $ \[$txtrst\]"
+PS1="\[$bldwht\][\[$txtcyn\]\u\[$bldwht\]] : \[$txtylw\]\w\[$txtgrn\] $ \[$txtrst\]"
 PS2="\[$bldwht\]> \[\e[00m\]"
 
 
 alias ls="ls -p --color=always --group-directories-first"
 alias grep="grep --color=always -n"
 
+alias mutt="neomutt"
+
+RANGER_LOAD_DEFAULT_RC=FALSE
 
 set -o vi
 

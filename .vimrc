@@ -2,9 +2,9 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'https://github.com/triglav/vim-visual-increment'
 
 call plug#end()
 
@@ -17,7 +17,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Lightline stuff
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
+	\ 'colorscheme': 'PaperColor',
 	\ }
 set laststatus=2
 set noshowmode
@@ -32,6 +32,8 @@ set incsearch
 set wrap!
 set hidden
 
+colorscheme pablo
+
 " Buffer remaps
 map <left> :bp<CR>
 inoremap <left> <Esc>:bp<CR>
@@ -39,20 +41,8 @@ map <right> :bn<CR>
 inoremap <right> <Esc>:bn<CR>
 map <down> :ls<CR>
 inoremap <down> <Esc>:ls<CR>
-map <up> :e 
-inoremap <up> <Esc>:e 
-nnoremap <Leader>\b :b
+nnoremap <Leader>b :b<Space>
 
 " My remapping
 inoremap {<CR> {<CR>}<Esc>O<Tab>
 map <F6> :setlocal spell! spelllang=en_us<CR>
-
-" C program skeleton
-augroup C
-    au BufNewFile *.c 0r ~/.vim/skeleton.c
-augroup end
-
-" C++ program skeleton
-augroup C++
-    au BufNewFile *.cpp 0r ~/.vim/skeleton.cpp
-augroup end
