@@ -1,48 +1,33 @@
-""a Specify a directory for plugins
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'https://github.com/triglav/vim-visual-increment'
 
+" Initialize plugin system
 call plug#end()
 
-filetype indent off						
-filetype plugin on						
-filetype off						
+filetype indent off
+filetype plugin off
 
-" No auto add comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Lightline stuff
 let g:lightline = {
-	\ 'colorscheme': 'PaperColor',
-	\ }
+      \ 'colorscheme': 'PaperColor',
+      \ }
 set laststatus=2
 set noshowmode
 
-
-" Personal settings
-set autoindent
-set relativenumber 
+syntax enable
+set smartindent
 set number
-syntax on
-set incsearch
-set wrap!
+set relativenumber
 set hidden
 
-colorscheme pablo
+colorscheme desert
 
-" Buffer remaps
-map <left> :bp<CR>
-inoremap <left> <Esc>:bp<CR>
-map <right> :bn<CR>
-inoremap <right> <Esc>:bn<CR>
-map <down> :ls<CR>
-inoremap <down> <Esc>:ls<CR>
-nnoremap <Leader>b :b<Space>
-
-" My remapping
-inoremap {<CR> {<CR>}<Esc>O<Tab>
-map <F6> :setlocal spell! spelllang=en_us<CR>
+inoremap {<Enter> {<Enter>}<Esc>O
+noremap <Left> <Esc>:bp<Enter>
+noremap <Right> <Esc>:bn<Enter>
+inoremap <Right> <Esc>:bn<Enter>
+inoremap <Left> <Esc>:bp<Enter>
